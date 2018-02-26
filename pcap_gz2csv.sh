@@ -2,26 +2,26 @@
 
 ###########################################################
 ### Parser PCAP.GZ to CSV 								   		       
-### Uso: 				  								   		          
-### 1. Poner en la carpeta donde estén todas las capturas  		 
-### 2. Darle permisos de ejecución. (chmod 755 pcap2csv.sh)  	 
-### 3. Ejecutar este script. (./pcap2csv.sh)				   	    
-### 4. En la misma carpeta que estamos aparece nuestro CSV 			
+### Usage: 				  								   		          
+### 1. Place on folder where pcap.gz is 		 
+### 2. Give execution permissions (like 755 or something).  	 
+### 3. Run the scriptoo (./pcap2csv.sh).				   	    
+### 4. When the scripto finishes, we will see the new csv files.			
 ### 															                														
 #######################################################################################################
-###	Columnas del CSV resultante													   					          
-###	| Fecha | timestamp | IP Origen | IP Destino | ID Protocolo | Puerto Origen | Puerto Destino |
+###	Info CSV													   					          
+###	| Date | Timestamp | IP Src  | IP Dst | ID Proto | Port Src | Puerto Dst |
 ###														   											                   
 ###														   											                   
 #######################################################################################################
-# Editar path si de verdad es necesario
+# Change path if you need it
 cap_files='*.pcap.gz'
 
-# Editar para cambiar cuando se crea el nuevo archivo para no llegar al maximo de filas.
+# Change to split the csv output. 
 split=1048574
 
 echo "Teleco LAN Party Feb-2018"
-echo "Parser para las capturas de Wireshark a CSV"
+echo "Parser pcap.gz Wireshark to CSV"
 echo ""
 
 tmpfile='tmp_file.pcap'
@@ -42,7 +42,6 @@ do
    #echo "== File:  $file"  >> $outfile
    $tshark_cmd -r $tmpfile $tshark_options >> $outfile
 
-   ### Evitar sobrepasar el max de filas admitido por excel/libreoffice
    if [ $( sed -n '$=' $outfile ) -gt $split ] 
    then
     numfiles=$(($numfiles + 1))
