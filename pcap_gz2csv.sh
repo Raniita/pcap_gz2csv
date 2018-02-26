@@ -1,18 +1,18 @@
 #!/bin/bash
 
 ###################################################################
-### Parser PCAP.GZ to CSV 								   		###
-### Uso: 				  								   		###
-### 1. Poner en la carpeta donde estén todas las capturas  		###
-### 2. Darle permisos de ejecución. (chmod 755 pcap2csv.sh)  	###
-### 3. Ejecutar este script. (./pcap2csv.sh)				   	###
-### 4. En la misma carpeta que estamos aparece nuestro CSV 		###	
-### 															###														
+### Parser PCAP.GZ to CSV 								   		       ###
+### Uso: 				  								   		          ###
+### 1. Poner en la carpeta donde estén todas las capturas  		 ###
+### 2. Darle permisos de ejecución. (chmod 755 pcap2csv.sh)  	 ###
+### 3. Ejecutar este script. (./pcap2csv.sh)				   	    ###
+### 4. En la misma carpeta que estamos aparece nuestro CSV 		 ###	
+### 															                ###														
 #######################################################################################################
-###	Columnas del CSV resultante													   					###
-###	| Fecha | timestamp | IP Origen | IP Destino | ID Protocolo | Puerto Origen | Puerto Destino |	###
-###														   											###
-###														   											###
+###	Columnas del CSV resultante													   					          ###
+###	| Fecha | timestamp | IP Origen | IP Destino | ID Protocolo | Puerto Origen | Puerto Destino |###
+###														   											                   ###
+###														   											                   ###
 #######################################################################################################
 
 # Editar path si de verdad es necesario
