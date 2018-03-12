@@ -18,7 +18,8 @@
 cap_files='*.pcap.gz'
 
 # Change to split the csv output. 
-split=1048574
+# Default no split option
+split=0
 
 echo "Teleco LAN Party Feb-2018"
 echo "Parser pcap.gz Wireshark to CSV"
